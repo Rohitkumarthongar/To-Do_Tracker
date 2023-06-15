@@ -1,0 +1,48 @@
+
+  #loginForm{
+    z-index: 10;
+    height: 700px;
+    width: 600px;
+    background-color: rgba(243, 234, 234, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    margin: 50px auto;
+    margin-bottom:10px;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+  
+}
+h1,h2,h3,label,button,label{
+  font-family: 'Fuzzy Bubbles', cursive;
+}
+p{
+  font-family: 'Fuzzy Bubbles', cursive;
+  font-size: large;
+}
+
+a{
+  text-decoration: none;
+ font-size:x-large;
+ font-family: 'Fuzzy Bubbles', cursive;
+ color: brown;
+}
+a:hover
+{
+  color: rgb(115, 14, 248);
+}
+mat-hint{
+  font-family: 'Fuzzy Bubbles', cursive;
+  font-size:small;
+
+}
+
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+mat-form-field{
+  width:600px !important;
+  margin: 10px;
+}
+

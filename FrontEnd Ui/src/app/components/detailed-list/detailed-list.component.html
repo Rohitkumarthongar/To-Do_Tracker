@@ -1,0 +1,24 @@
+<div class="DetailCard">
+      <p>Task Name : {{data.taskHeading | uppercase}} </p>
+     <p class="card-text col-6"> <mat-label> Task Name : {{data.taskHeading}} </mat-label></p>
+      <p class="card-text col-6"> <mat-label> Task Category : {{data.taskCategory |uppercase}} </mat-label></p>
+  
+      <p class="card-text col-6"><mat-label>Task Start Date : {{data.taskStartDate |date}}</mat-label></p>
+
+  
+      <p class="card-text col-6"><mat-label>Task End Date : {{data.taskEndDate |date}}</mat-label></p>
+
+  
+      <p class="card-text col-6"><mat-label>Task Description : {{data.taskDescription |uppercase}}</mat-label></p>
+ 
+  
+      <p class="card-text col-6"><mat-label>Task Priority : {{data.priority | uppercase}}</mat-label></p>
+
+      <!-- <div >
+        <label *ngIf="data.status==true"> Completed</label>
+        <label *ngIf="data.status==false"> pending</label>
+      </div> -->
+
+     
+  </div>
+

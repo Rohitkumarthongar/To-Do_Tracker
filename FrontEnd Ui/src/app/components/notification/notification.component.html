@@ -1,0 +1,61 @@
+<div style="padding: 20px;">
+  <mat-tab-group mat-align-tabs="center">
+  <!--======================================================-->  
+ <!-- <mat-tab label="Over Due Date">
+    
+  <div *ngFor="let x of dueDate" id="chart">
+    <mat-card class="container">
+      <mat-card-title>{{x.taskHeading | uppercase}}</mat-card-title>
+      <mat-card-subtitle> <h2>{{x.taskCategory |uppercase}}</h2> </mat-card-subtitle>
+      <mat-card-content style="display:inline-block;">
+        <p>Task Description : {{x.taskDescription}}</p>
+         <p> Task Start Date : {{x.taskStartDate | date}}</p>
+        
+        <p> Task End Date : {{x.taskEndDate | date }}</p>
+      </mat-card-content>
+   
+    </mat-card>
+  </div>
+
+</mat-tab> --> -->
+
+<mat-tab label="Due Task">
+    
+  <div *ngFor="let x of NearDate" id="chart">
+    <mat-card class="container1">
+     
+      <mat-card-title>{{x.taskHeading | uppercase}}</mat-card-title>
+      <mat-card-subtitle> <h2>{{x.taskCategory |uppercase}}</h2> </mat-card-subtitle>
+      <mat-card-content style="display:inline-block;">
+        <!-- <p>Task Description : {{x.taskDescription}}</p> -->
+        <p> Task Start Date : {{x.taskStartDate | date}}</p>
+        
+        <p style="color: red;"> Task End Date : {{x.taskEndDate | date }}</p>
+      </mat-card-content>
+      <br>
+      <label>Task On Due Date.....Pls Complete it First</label>
+    </mat-card>
+    
+  </div>
+  
+</mat-tab>
+
+<mat-tab label="New Task ">
+    
+  <div *ngFor="let x of today" id="chart">
+    <mat-card class="container3">
+      <mat-card-title>{{x.taskHeading | uppercase}}</mat-card-title>
+      <mat-card-subtitle> <h2>{{x.taskCategory |uppercase}}</h2> </mat-card-subtitle>
+      <mat-card-content style="display:inline-block;">
+        <!-- <p>Task Description : {{x.taskDescription}}</p> -->
+        <p> Task Start Date : {{x.taskStartDate | date}}</p>
+        
+        <p> Task End Date : {{x.taskEndDate | date }}</p>
+      </mat-card-content>
+   
+    </mat-card>
+  </div>
+
+</mat-tab>
+</mat-tab-group>
+</div>

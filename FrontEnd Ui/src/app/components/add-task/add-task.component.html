@@ -1,0 +1,79 @@
+
+<div id="addForm">
+    <form [formGroup]="addTaskToList">
+
+      <mat-form-field style="width:600px !important" appearance="outline">
+        <mat-label for="taskHeading" class="form-label">Task Heading</mat-label>
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <input matInput type="text" id="taskHeading"  placeholder="Enter Heading Here" formControlName="taskHeading" >
+        <div class="form-text text-danger" *ngIf="taskHeading.errors?.['required'] && (taskHeading.touched || taskHeading.dirty)">
+            Task Heading Is Required
+    </div>
+    <div class="form-text text-danger" *ngIf="taskHeading.errors?.['minlength'] && (taskHeading.touched || taskHeading.dirty)">
+           Task Heading Has Minimum 4 characters to Title
+    </div>
+    <div class="form-text text-danger" *ngIf="taskHeading.errors?.['maxlength'] && (taskHeading.touched || taskHeading.dirty)">
+        Task Heading Has Max 20 characters to Title
+    </div>
+    </mat-form-field>
+ 
+
+
+    <mat-form-field style="width:600px !important" appearance="outline">
+      <mat-label for="taskCategory" class="form-label">Task Category</mat-label>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <input matInput type="text"  name="taskCategory" class="form-control" formControlName="taskCategory" >
+      <div class="form-text text-danger" *ngIf="taskCategory.errors?.['required'] && (taskCategory.touched || taskCategory.dirty)">
+        Task Category Is Required
+</div>
+  </mat-form-field>
+       
+
+<mat-form-field style="width:600px !important" appearance="outline">
+  <mat-label for="taskPriority" class="form-label">Task Priority</mat-label>
+  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  <mat-select name="priority" class="form-control" formControlName="priority">
+    <mat-option value="HIGH">IMPORTANT</mat-option>
+    <mat-option value="LOW">NORMAL</mat-option>
+  </mat-select>
+  <div class="form-text text-danger" *ngIf="priority.errors?.['required'] && (priority.touched || priority.dirty)">
+    Task Priority Is Required
+</div>
+</mat-form-field>
+
+<mat-form-field style="width:600px !important" appearance="outline">
+  <mat-label>Enter a date range</mat-label>
+  <mat-date-range-input [rangePicker]="picker">
+    <input matStartDate placeholder="Start date" formControlName="taskStartDate">
+    <input matEndDate placeholder="End date" formControlName="taskEndDate">
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
+
+<mat-form-field style="width:600px !important" appearance="outline"  >
+    <mat-label for="taskDescription" class="form-label">Task Description</mat-label>
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <input matInput type="text"   name="taskDescription" class="form-control" formControlName="taskDescription" id="description">
+    <div class="form-text text-danger" *ngIf="taskDescription.errors?.['required'] && (taskDescription.touched || taskDescription.dirty)">
+        Task Description Is Required
+</div>
+<div class="form-text text-danger" *ngIf="taskDescription.errors?.['minlength'] && (taskDescription.touched || taskDescription.dirty)">
+       Task Description Has Minimum 4 characters to Title
+</div>
+<div class="form-text text-danger" *ngIf="taskDescription.errors?.['maxlength'] && (taskDescription.touched || taskDescription.dirty)">
+    Task Description Has Max 200 characters to Title
+</div>
+</mat-form-field>
+
+            <button mat-icon-button color="warn" type="submit"  [disabled]="addTaskToList.invalid" (click)="addTask()" >
+              <mat-icon title="Add Task">
+                add_circle
+              </mat-icon> </button>
+              <!-- <button mat-icon-button color="warn" type="submit"  [disabled]="addTaskToList.invalid" (click)="addTaskArchieve(addTaskToList.value)">
+                <mat-icon title="Archieve Task">
+                    archive
+                </mat-icon> </button> -->
+                <button mat-icon-button (click)="close()"> <mat-icon>close</mat-icon></button>
+    </form>
+</div> 

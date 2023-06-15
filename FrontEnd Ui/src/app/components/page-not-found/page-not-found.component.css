@@ -1,0 +1,26 @@
+#img{
+    text-align: center;
+    /* margin: 8% 0 0 31%; */
+ }mat-divider {
+     margin-top: 10px;
+     margin-bottom: 10px;
+     width: 100%;
+     background-color: rgba(19, 18, 18, 0.564);
+   }
+ 
+   h2,h3,h4{
+     font-family: 'Fuzzy Bubbles', cursive;
+     font-weight: bold;     
+ }
+
+ h1{
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-weight: bold;  
+    font-size: xx-large;
+ }
+ footer{
+     padding: 10px;
+     position: fixed;
+     bottom: 0;
+     
+ }

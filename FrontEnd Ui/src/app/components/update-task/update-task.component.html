@@ -1,0 +1,78 @@
+<div id="addForm">
+  <form [formGroup]="updateTaskForm" >
+
+<mat-form-field style="width:600px !important" appearance="outline">
+      <mat-label for="taskHeading" class="form-label">Task Heading</mat-label>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <input [(ngModel)]="taskHeading1"  matInput type="text" id="taskHeading"  placeholder="Enter Heading Here" formControlName="taskHeading" >
+      <div class="form-text text-danger" *ngIf="taskHeading.errors?.['required'] && (taskHeading.touched || taskHeading.dirty)">
+          Task Heading Is Required
+      </div>
+  <div class="form-text text-danger" *ngIf="taskHeading.errors?.['minlength'] && (taskHeading.touched || taskHeading.dirty)">
+         Task Heading Has Minimum 4 characters to Title
+  </div>
+  <div class="form-text text-danger" *ngIf="taskHeading.errors?.['maxlength'] && (taskHeading.touched || taskHeading.dirty)">
+      Task Heading Has Max 20 characters to Title
+  </div>
+  </mat-form-field>
+  <!-- <button mat-icon-button> <mat-icon>update</mat-icon>  </button> -->
+    
+ <mat-form-field style="width:600px !important" appearance="outline">
+  <mat-label for="taskCategory" class="form-label">Task Category</mat-label>
+  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  <input [(ngModel)]="taskCategory1" matInput type="text"  name="taskCategory"  formControlName="taskCategory" >
+  <div class="form-text text-danger" *ngIf="taskCategory.errors?.['required'] && (taskCategory.touched || taskCategory.dirty)">
+    Task Category Is Required
+</div>
+</mat-form-field>
+<!-- <button mat-icon-button> <mat-icon>update</mat-icon>  </button> -->
+
+
+<mat-form-field style="width:600px !important" appearance="outline">
+  <mat-label for="taskPriority" class="form-label">Task Priority</mat-label>
+  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  <mat-select  [(ngModel)]="priority1" name="priority"  formControlName="priority" value="NORMAL" >
+    <mat-option value="HIGH">IMPORTANT</mat-option>
+    <mat-option value="LOW">NORMAL</mat-option>
+  </mat-select>
+  <div class="form-text text-danger" *ngIf="priority.errors?.['required'] && (priority.touched || priority.dirty)">
+    Task Priority Is Required
+  </div>
+  </mat-form-field>
+  <!-- <button mat-icon-button> <mat-icon>update</mat-icon>  </button> -->
+
+    <mat-form-field style="width:600px !important" appearance="outline">
+    <mat-label>Time Duration </mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate placeholder="Start date" name="taskStartDate"  formControlName="taskStartDate" [(ngModel)]="taskStartDate1">
+      <input matEndDate placeholder="End date"  name="taskEndDate"  formControlName="taskEndDate" [(ngModel)]="taskEndDate1">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+    <mat-hint> End Date Must Be Higher then The Strat Date</mat-hint>
+    <div *ngIf="updateTaskForm.get('taskStartDate')?.errors?.['required']">Start Date  is required</div>
+    <div *ngIf="updateTaskForm.get('taskStartDate')?.errors?.['notvalid']">
+        Apply Date In Corect Format
+    </div>
+    </mat-form-field >
+    <!-- <button mat-icon-button > <mat-icon>update</mat-icon>  </button> -->
+<mat-form-field style="width:600px !important" appearance="outline"  >
+  <mat-label for="taskDescription" class="form-label">Task Description</mat-label>
+  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  <input [(ngModel)]="taskDescription1" matInput type="text"   name="taskDescription" formControlName="taskDescription" id="description">
+  <div class="form-text text-danger" *ngIf="taskDescription.errors?.['required'] && (taskDescription.touched || taskDescription.dirty)">
+      Task Description Is Required
+</div>
+<div class="form-text text-danger" *ngIf="taskDescription.errors?.['minlength'] && (taskDescription.touched || taskDescription.dirty)">
+     Task Description Has Minimum 4 characters to Title
+</div>
+<div class="form-text text-danger" *ngIf="taskDescription.errors?.['maxlength'] && (taskDescription.touched || taskDescription.dirty)">
+  Task Description Has Max 200 characters to Title
+</div>
+
+</mat-form-field>
+
+<button mat-button color="warn" type="submit" title="Update Task" [disabled]="updateTaskForm.invalid" (click)="updateTask(updateTaskForm.value)" >Update All</button>
+ <button mat-button color="warn" title="cancel" type="submit" (click)="closeDia()"> Cancel</button>
+  </form>
+</div>

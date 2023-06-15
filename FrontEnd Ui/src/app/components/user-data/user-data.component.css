@@ -1,0 +1,19 @@
+h1,h2,h3,h4,p,label,span,div{
+    font-family: 'Fuzzy Bubbles', cursive;
+    display: flexbox;
+    padding: 5px;
+    font-size: large;
+  }
+
+
+  #details{
+    z-index: 10;
+    height: 300px;
+    width: 450px;
+    background-color: rgba(243, 234, 234, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    margin: 150px auto;
+    margin-bottom:10px;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}

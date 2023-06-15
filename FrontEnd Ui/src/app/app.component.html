@@ -1,0 +1,145 @@
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
+      </style>
+</head>
+<body>
+  <header>
+    <mat-toolbar >
+       <mat-toolbar-row>
+           <img mat-icon-button  id="icon" src="../assets/Blue-Back.jpg">
+
+           <button mat-icon-button (click)="opened=!opened" *ngIf="login()" matTooltip="Menu"><mat-icon>menu</mat-icon></button>
+           <button mat-icon-button  *ngIf="!login()" matTooltip="Home" routerLink="/"><mat-icon>home</mat-icon></button>
+             <h1 id="h1"> TO DO Tracker</h1>
+             
+     <div id="loginbtn"> 
+      <button mat-icon-button matTooltip="Profile" routerLink="/userProfile" *ngIf="login()" >
+        <mat-icon>person</mat-icon>
+      </button>
+      <!-- <button mat-icon-button title="Person" (click)=" ProfileDialog()" *ngIf="login()" >
+        <mat-icon>person</mat-icon>
+      </button> -->
+      <button mat-icon-button title="Notification" routerLink="/notification" *ngIf="login()" >
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <!-- <button mat-icon-button title="Log Out" (click)="logOut()"  *ngIf="login()">
+        <mat-icon>power_settings_new</mat-icon>
+      </button> -->
+     </div>
+     </mat-toolbar-row></mat-toolbar></header>
+     <mat-sidenav-container>
+       <mat-sidenav [(opened)]="opened" mode="side" *ngIf="login()" >
+         <button class="closeBtn" mat-icon-button (click)="opened=!opened"  > <mat-icon>close</mat-icon> </button>
+         <br>
+         <br>
+         <mat-nav-list color="primary"> 
+          
+<!--           
+          <button mat-icon-button  title="update User" routerLink="/updateUser">
+           <mat-icon  class="sidenav-icon">edit</mat-icon>
+           <label for="" >Edit User Profile </label>
+        </button> -->
+
+           <button mat-icon-button  routerLink="/Home">
+             <mat-icon class="sidenav-icon">home</mat-icon>
+           <label matTooltip="Home" routerLink="/Home">Home</label>
+           </button>
+
+                   
+            <button mat-icon-button  routerLink="/notification">
+              <mat-icon class="sidenav-icon">notifications</mat-icon>
+            <label matTooltip="Notification" routerLink="/notification">Notification</label>
+            </button>
+
+           <button mat-icon-button routerLink="/AddTask">
+           <mat-icon class="sidenav-icon">add</mat-icon>
+           <label matTooltip="Add Task">Add Task</label>
+           </button>
+
+           <button mat-icon-button [matMenuTriggerFor]="menu" class="sidenav-icon">
+            <mat-icon>filter_list</mat-icon>
+            <label matTooltip="Priority filter" style="margin-left:10px ;">Priority filter</label>
+          </button >
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item  routerLink="/low" style="font-size: large;">High Priority</button>
+            <button mat-menu-item routerLink="/high" style="font-size: large;">Low Priority</button>
+          </mat-menu>
+           <button mat-icon-button routerLink="/List">
+           <mat-icon class="sidenav-icon">list</mat-icon>
+           <label matTooltip="To Do List">Task List</label>
+           </button>
+           <button mat-icon-button routerLink="/ArchieveList">
+            <mat-icon class="sidenav-icon">archive</mat-icon>
+            <label matTooltip="Archieve List">Archive List</label>
+            </button>
+            <button mat-icon-button routerLink="/recycleBin">
+                <mat-icon class="sidenav-icon">delete</mat-icon>
+                <label matTooltip="Recycle Bin">RecycleBin</label>
+                </button>
+    
+           <button mat-icon-button>
+           <mat-icon class="sidenav-icon" routerLink="/aboutUs">info</mat-icon>
+           <label matTooltip="About Us">About Us</label>
+           </button>
+            <!-- <button mat-icon-button routerLink="/feedBack">
+            <mat-icon class="sidenav-icon">feedback</mat-icon>
+            <label title="Feed Back" >Feedback</label>
+            </button> -->
+           <br>
+           <br>
+           <footer >
+            <div >
+                <img height="50" src="../assets/Blue-Back.jpg" class="logo-font" >
+                <span class="attribution">  
+                  <h3>Version : 1.01</h3>
+                   <h3> &copy; {{ today | date: 'yyyy' }}.
+                    An interactive learning project from <a href="https://copyright.gov.in/">To DO Tracker</a>.
+                    Code licensed under NIIT.</h3>
+                </span>
+            </div>
+        </footer>
+         </mat-nav-list>
+       </mat-sidenav>
+
+
+       <!-- ************************** -->
+       <!-- <ng-template #userProfile >
+        <h2 matDialogTitle> Profile </h2>
+        <mat-divider></mat-divider>
+        <mat-dialog-content  >
+          <p>userData</p>
+
+  <p>User Name : {{x.userName |uppercase}} </p>
+
+  <p class="card-text col-6"> <mat-label> Email Id : {{x.userEmailId | lowercase}} </mat-label></p>
+
+  <p class="card-text col-6"><mat-label>Gender :{{x.userGender }}</mat-label></p>
+
+
+  <p class="card-text col-6"><mat-label>Date Of Birth :{{x.userDateOfBirth |date}}</mat-label></p>
+        </mat-dialog-content>
+        <mat-dialog-actions align="end">
+          <button mat-button  matDialogClose  color="primary"  routerLink="/updateUser">Edit</button>
+          <button mat-button  matDialogClose  color="primary" (click)="logOut()">Log Out</button>
+          
+
+        </mat-dialog-actions>
+      </ng-template> -->
+       
+       <mat-sidenav-content >
+         <router-outlet></router-outlet>
+         <lib-ng-toast></lib-ng-toast>
+       </mat-sidenav-content>
+     </mat-sidenav-container>
+    
+   
+     
+</body>
+</html> 

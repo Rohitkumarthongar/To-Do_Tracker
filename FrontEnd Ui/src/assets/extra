@@ -1,0 +1,89 @@
+<!-- 
+        <div class="form-group">
+            <label>Start Date</label>
+            <input type="date" name="taskStartDate" class="form-control" formControlName="taskStartDate">
+            <div
+                *ngIf="addTask.get('taskStartDate')?.invalid && (addTask.get('taskStartDate')?.dirty ||addTask.get('taskStartDate')?.touched)">
+                <div *ngIf="addTask.get('taskStartDate')?.errors?.['required']">Start Date  is required</div>
+                <div *ngIf="addTask.get('taskStartDate')?.errors?.['notvalid']">
+                    strat date must be greater than today
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Due Date</label>
+            <input type="date" name="taskEndDate" class="form-control" formControlName="taskEndDate">
+            <div
+                *ngIf="addTask.get('taskEndDate')?.invalid && (addTask.get('taskEndDate')?.dirty ||addTask.get('taskEndDate')?.touched)">
+                <div *ngIf="addTask.get('taskEndDate')?.errors?.['required']">Start Date is required</div>
+                <div *ngIf="addTask.get('taskEndDate')?.invalid">
+                    must be greater than strat date
+                </div>
+            </div>
+        </div> -->
+
+        <!-- 
+  <div id="loginForm" >
+           
+    <form [formGroup]="task" (ngSubmit)="onSubmit()">
+    
+        
+            <mat-form-field style="width:600px !important" appearance="outline">
+              <mat-label for="taskHeading" class="form-label">Task Heading</mat-label>
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <input matInput type="text" id="taskHeading"  placeholder="Enter Heading Here" formControlName="taskHeading" >
+                  <div class="form-text text-danger" *ngIf="taskHeading.errors?.['required'] && (taskHeading.touched || taskHeading.dirty)">
+                      User Name Is Required
+                  </div>
+                  <div class="form-text text-danger" *ngIf="taskHeading.errors?.['minlength'] && (taskHeading.touched || taskHeading.dirty)">
+                      User Name Required Minimum 4 characters
+                  </div>
+                  <div class="form-text text-danger" *ngIf="taskHeading.errors?.['maxlength'] && (taskHeading.touched || taskHeading.dirty)">
+                      User Name Has Maximum 20 characters
+                  </div>
+          </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>taskHeading</mat-label>
+            <input matInput type="text" formControlName="taskHeading">
+            </mat-form-field>
+         
+
+            <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>categoryName</mat-label>
+           <input matInput type="text" formControlName="categoryName">
+           </mat-form-field><br>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>taskDescription</mat-label>
+            <input matInput type="text" formControlName="taskDescription">
+            </mat-form-field><br>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>taskEndDate</mat-label>
+            <input matInput  type="date" formControlName="taskEndDate">
+            </mat-form-field><br>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>taskStartDate</mat-label>
+            <input matInput type="date" formControlName="taskStartDate">
+           </mat-form-field><br>
+
+           <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>status</mat-label>
+           <input matInput type="text" formControlName="status">
+           </mat-form-field><br>
+
+
+           <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>priority</mat-label>
+          <input matInput type="text" formControlName="priority">
+         </mat-form-field><br>
+
+
+       <br><button  (click)="onSubmit()">Add Task</button>
+       
+     </form>
+    </div>
+
+ -->

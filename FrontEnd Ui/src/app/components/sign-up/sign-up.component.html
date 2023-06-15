@@ -1,0 +1,101 @@
+<div id="loginForm" >
+        <form  [formGroup]="signUpForm">
+        <mat-form-field style="width:600px !important" appearance="outline">
+            <mat-label for="userName" class="form-label">User Name</mat-label>
+            <input matInput type="text" id="userName"  placeholder="Enter User Name" formControlName="userName" >
+                <div class="form-text text-danger" *ngIf="userName.errors?.['required'] && (userName.touched || userName.dirty)">
+                    User Name Is Required
+                </div>
+                <div class="form-text text-danger" *ngIf="userName.errors?.['minlength'] && (userName.touched || userName.dirty)">
+                    User Name Required Minimum 4 characters
+                </div>
+                <div class="form-text text-danger" *ngIf="userName.errors?.['maxlength'] && (userName.touched || userName.dirty)">
+                    User Name Has Maximum 20 characters
+                </div>
+                <div class="form-text text-danger" *ngIf="userName.errors?.['pattern'] && (userName.touched || userName.dirty)">
+                    Follow The Pattern
+                </div>
+        </mat-form-field>
+        <mat-form-field style="width:600px !important" appearance="outline">
+            <mat-label for="userEmailId" class="form-label">User Email Id</mat-label>
+            <input matInput type="email" id="email"  placeholder="Enter Email" formControlName="userEmailId"  >
+                <div class="form-text text-danger" *ngIf="userEmailId.errors?.['required'] && (userEmailId.touched || userEmailId.dirty)">
+                    User Email Is Required
+                </div>
+                <div class="form-text text-danger" *ngIf="userEmailId.errors?.['minlength'] && (userEmailId.touched || userEmailId.dirty)">
+                    User Email Required Minimum 4 characters
+                </div>
+                <div class="form-text text-danger" *ngIf="userEmailId.errors?.['maxlength'] && (userEmailId.touched || userEmailId.dirty)">
+                    User Email Has Maximum 50 characters
+                </div>
+                <div class="form-text text-danger" *ngIf="userEmailId.errors?.['pattern'] && (userEmailId.touched || userEmailId.dirty)">
+                    Follow Pattern Of Mail id
+                </div>
+               
+        </mat-form-field>
+     
+        <mat-form-field style="width:600px !important" appearance="outline">
+            <mat-label for="usergender" class="form-label">User Gender</mat-label>
+            <mat-select type="text" class="form-control" id="gender" formControlName="userGender">
+                   
+                    <mat-option value="Male">Male</mat-option>
+                    <mat-option value="Female">Female</mat-option>
+                    <mat-option value="Others">Others</mat-option>
+            </mat-select>
+            <div class="form-text text-danger" *ngIf="userGender.errors?.['required'] && (userGender.touched || userGender.dirty)">
+                User Gender Is Required
+            </div>
+        </mat-form-field>
+
+        <mat-form-field style="width:600px !important" appearance="outline" >
+            <mat-label >User  PassWord</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'"  id="inputWidth" formControlName="userPassword" matInput type="text" placeholder="Enter Password Here">
+             <mat-hint>Must Have digit/UpperCase/LowerCase</mat-hint> 
+             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+             <div class="form-text text-danger" *ngIf="userPassword.errors?.['required'] && (userPassword.touched || userPassword.dirty)">
+                              User Password Is Required
+                      </div>
+                      <div class="form-text text-danger" *ngIf="userPassword.errors?.['minlength'] && (userPassword.touched || userPassword.dirty)">
+                              User Password is Weak
+                      </div>
+                      <div class="form-text text-danger" *ngIf="userPassword.errors?.['maxlength'] && (userPassword.touched || userPassword.dirty)">
+                              User Password is Strong
+                      </div>
+                      <div class="form-text text-danger" *ngIf="userPassword.errors?.['pattern'] && (userPassword.touched || userPassword.dirty)">
+                        Minimum 6 characters
+At least 1 upper case English letter
+At least 1 lower case English letter
+At least 1 letter
+At least 1 special character
+                </div>
+          </mat-form-field>
+
+          <mat-form-field style="width:600px !important" appearance="outline">
+            <mat-label>Confirm Passwords</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" type="password" name="confirmPassword" formControlName="confirmPassword">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            <div *ngIf="signUpForm.get('confirmPassword')?.errors?.['passmatching']">Passwords must match
+            </div>  
+          </mat-form-field> 
+      
+          <mat-form-field style="width:600px !important" appearance="outline">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker"  class="form-control" formControlName="dateOfBirth">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <button style="margin: 20px auto 20px 10px;" mat-raised-button color="primary" type="submit"   (click)="signUp(signUpForm.value)"  [disabled]="signUpForm.invalid">
+            Submit
+          </button>
+          <button mat-icon-button (click)="close()" style="margin-left:10px ;"> <mat-icon>close</mat-icon></button> 
+    </form>
+   
+    <p>If You Are Registered User Pls Click For Login<button mat-button><a href="/Login" >Login</a>
+    </button></p>      
+</div>  
+ 

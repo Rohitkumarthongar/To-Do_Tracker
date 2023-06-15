@@ -1,0 +1,142 @@
+h2,h3,h4,button{
+  font-family: 'Fuzzy Bubbles', cursive;
+  font-weight: bold;     
+}
+
+h1{
+ font-family: 'Fuzzy Bubbles', cursive;
+ font-weight: bold;  
+ font-size: xx-large;
+}
+
+
+  
+mat-toolbar {
+  background-color: transparent;
+  } 
+
+#featureBtn
+{
+  width: fit-content;
+  margin-left: 15%;
+}
+
+#loginbtn{
+  margin-left: 30%;
+  font-family: 'Fuzzy Bubbles', cursive;
+        font-size: x-large;
+        width: fit-content;
+        border-radius: 10px;
+  }
+  
+  #SignUpBtn
+  {
+    width:15%;
+    margin-left: 1%;
+    font-family: 'Fuzzy Bubbles', cursive;
+        font-size: x-large;
+        font-weight: bold;
+        background-color: rgb(245, 199, 101);
+        border-radius: 10px;      
+  }
+  mat-icon{
+    font-size: x-large;
+   }
+   
+   button{
+     height: 45px;
+     width: 45px;
+     }
+     mat-icon{
+      font-size: x-large;
+     }
+     
+     button{
+       height: 45px;
+       width: 45px;
+       }
+       label{
+         font-family: 'Fuzzy Bubbles', cursive;
+         font-size: large;
+       }
+       
+       #icon
+       {
+           height: 100%;
+           width: 60px;
+           
+       }
+         
+         mat-sidenav {
+           width: 20%;
+          margin:0.5%;
+           background-color:rgb(202, 204, 206);
+           box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+           border-radius: 5px;
+           z-index: 10;
+           background: transparent;
+         }
+         mat-sidenav-container {
+           height: 93%;
+           background-size: cover; 
+           background: transparent;
+            }
+        
+         mat-nav-list{
+           display:grid;
+         }
+         
+         .sidenav-icon {
+           margin: 10px;
+         }
+       
+         .closeBtn{
+           float: left;
+           padding: 0px;
+         }
+       mat-icon:hover
+         {
+         color: rgb(175, 245, 245);
+         }
+            
+           .profilePop{
+             height: 400px;
+             width:400px;
+             border: black 1px solid;
+         }
+
+         .front1
+         {
+          width:600px;
+          height: 200px;
+          margin-top: 8%;
+          margin-left: 32%;
+          display:block;
+          padding: 20px;
+          text-align: center;
+          font-size: x-large;
+         font-weight: bold;
+          font-family: 'Fuzzy Bubbles', cursive;
+        
+         }
+
+         .front2{
+          background-image: url(/src/assets/Book.jpg);
+          opacity: 50%;
+          background-size: cover;
+          width:1000px;
+          height: 450px;
+          margin-left: 23%;
+          border: 1px red solid;
+         }
+
+  #SignUpBtn2
+  {
+    text-align: center;
+    width:40%;
+    font-family: 'Fuzzy Bubbles', cursive;
+        font-size: x-large;
+        font-weight: bold;
+        background-color: rgb(245, 199, 101);
+        border-radius: 10px;      
+  }

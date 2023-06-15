@@ -1,0 +1,55 @@
+<div id="loginForm" >
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+            <mat-form-field style="width:450px !important" appearance="outline">
+          <mat-label>User EmailId </mat-label>
+          <input matInput type="email" id="email"  placeholder="Enter Email" formControlName="userEmailId" >
+          <div class="form-text text-danger" *ngIf="userEmailId.errors?.['required'] && (userEmailId.touched || userEmailId.dirty)">
+                            User Email Is Required
+                    </div>
+                    <div class="form-text text-danger" *ngIf="userEmailId.errors?.['minlength'] && (userEmailId.touched || userEmailId.dirty)">
+                            User Email is too Short
+                    </div>
+                    <div class="form-text text-danger" *ngIf="userEmailId.errors?.['maxlength'] && (userEmailId.touched || userEmailId.dirty)">
+                            User Email is too Long
+                    </div>
+                    <div class="form-text text-danger" *ngIf="userEmailId.errors?.['pattern'] && (userEmailId.touched || userEmailId.dirty)">
+                        Follow the Pattern
+                </div>
+        </mat-form-field>
+        <br>
+        <mat-form-field style="width:450px !important" appearance="outline">
+          <mat-label >User  PassWord</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'"  id="inputWidth" formControlName="userPassword" matInput type="text" placeholder="Enter Password Here">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+           <div class="form-text text-danger" *ngIf="userPassword.errors?.['required'] && (userPassword.touched || userPassword.dirty)">
+                            User Password Is Required
+                    </div>
+                    <div class="form-text text-danger" *ngIf="userPassword.errors?.['minlength'] && (userPassword.touched || userPassword.dirty)">
+                            User Password is too Short
+                    </div>
+                    <div class="form-text text-danger" *ngIf="userPassword.errors?.['maxlength'] && (userPassword.touched || userPassword.dirty)">
+                            User Password is too Long
+                    </div>
+                    <div class="form-text text-danger" *ngIf="userPassword.errors?.['pattern'] && (userPassword.touched || userPassword.dirty)">
+                        Minimum 6 characters
+                        At least 1 upper case English letter
+                        At least 1 lower case English letter
+                        At least 1 letter
+                        At least 1 special character
+                </div>
+                    
+
+        </mat-form-field>
+        <h3><a style="float: right;font-weight: bold;" href="/forgotpassword">forgotPasswords</a></h3>
+        <button style="margin: 10px auto 20px auto" mat-flat-button color="primary" type="submit"  (click)="login(loginForm.value)" [disabled]="loginForm.invalid">Login</button>
+        <button mat-flat-button (click)="close()">Cancel</button>    
+    </form>
+       
+    <p>If You Are Not a registered User pls<button mat-button>
+            <a href="/SignUp" style="font-size:x-large ;">Sign Up </a>
+    </button></p> 
+                      
+                                       
+</div>

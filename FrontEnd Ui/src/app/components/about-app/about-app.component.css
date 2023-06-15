@@ -1,0 +1,22 @@
+.achievement-image {
+    width: 200px;
+    height: 250px;
+}
+mat-divider {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: rgba(19, 18, 18, 0.564);
+  }
+
+  h1,h2,h3,h4{
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-weight: bold;
+    
+}
+footer{
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    
+}

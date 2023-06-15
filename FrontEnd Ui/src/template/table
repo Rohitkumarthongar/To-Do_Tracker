@@ -1,0 +1,167 @@
+ <mat-card  *ngFor="let x of taskList">
+  <mat-card-title>{{x.taskHeading}}</mat-card-title>
+  <mat-card-content>
+    <p>{{x.taskId}}</p>
+    <p>{{x.taskCategory}}</p>
+    <p>{{x.taskDescription}}</p>
+    <p>{{x.taskEndData}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button (click)="openDilog(x)" id="add" >
+      <mat-icon>
+        add_shopping_cart
+        </mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+  <div>
+    <div id="chart" *ngFor="let x of taskList">
+      <div class="container">
+        <div class="row">
+            <ng-container >
+              <div class="card col-md-4">
+                <p>{{x.taskId}}</p>
+                <h5></h5>
+                <p id="P1">{{x.taskCategory}}</p>
+                <p><strong>Size : {{x.taskHeading}}</strong></p>
+                <p id="p2"><Strong>Price :  {{x.taskDescription}}</Strong></p>
+                <button mat-icon-button (click)="openDilog(x)" id="add" >
+                  <mat-icon>
+                    add_shopping_cart
+                    </mat-icon>
+                </button>
+              </div>
+            </ng-container>
+          </div>
+          </div>
+         </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+<!-- <div *ngFor="let x of taskList">
+  <div class="card" style="width: 18rem;" >
+    <div class="card-body">
+      <h3>{{x.taskId}}</h3>
+      <h1 class="card-title">{{x.taskHeading}}</h1>
+      <p class="card-text">{{x.taskDescription}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{x.taskStartDate}}</li>
+      <li class="list-group-item">{{x.taskEndData}}</li>
+    
+    </ul>
+    <div class="card-body">
+      <a (click)="openDilog(x)" class="card-link"> Details </a>
+      <a (click)="remove(x.taskId)" class="card-link">Remove</a>
+    </div>
+  </div>
+</div> -->
+
+     
+<!-- 
+   <div class="example-container mat-elevation-z8">
+    <mat-table *ngFor="let x of taskList">
+  
+    
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{x.taskHeading}} </mat-cell>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{x.taskEndData}} </mat-cell>
+      </ng-container>
+ 
+      <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{x.taskId}} </mat-cell>
+      </ng-container>
+  
+ 
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{x.taskDescription}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div> -->
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <table class="table table-bordered">
+          <thead>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+          </thead>
+          <tr *ngFor="let x of taskList">
+            <td >{{x.taskId}}</td>
+            <td >{{x.taskHeading}}</td>
+            <td >{{x.taskCategory}}</td>
+            <td  >{{x.taskDescription}}</td>
+            <td >{{x.taskEndData}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div> -->
+  
+  <!-- <div class="roe">
+    <pre>{{tableData | json}}</pre>
+  </div> -->
+  
+
+
+ <!-- <table>
+      <thead >
+        <tr >
+          <th >S.No</th>
+          <th >Heading</th>
+          <th >Category</th>
+          <th >StartDate</th>
+          <th>Details</th>
+          <th>Details</th>
+          <th>Edit</th>
+          <th>Remove</th>
+       
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let x of taskList | filter: searchText ">
+          <td>{{x.taskId}}</td>
+          <td>{{x.taskHeading}}</td>
+          <td>{{x.taskCategory}}</td>
+          <td>{{x.taskStartDate | date:'fullDate'}}</td>
+          <td>{{x.taskEndDate | date:'fullDate'}}</td>
+          <td >
+            <button mat-icon-button (click)="openDilog(x)">
+              <mat-icon matTooltip="View Task Details">
+info
+              </mat-icon>
+            </button>
+            
+          </td>
+            <td>
+              <button mat-icon-button style="margin:auto;" (click)="f2(x.taskId,x.taskHeading,x.taskCategory,x.taskDescription,x.taskEndData,x.taskStartDate,x.status,x.priority)">
+              <mat-icon matTooltip="Edit Task" >edit</mat-icon> </button></td>
+            <td>
+              <td>
+                <button  mat-icon-button (click)="remove(x.taskId)">
+                  <mat-icon matTooltip="Remove Task">delete</mat-icon>
+                </button>
+              </td>
+        </tr>
+      </tbody>
+    </table>   -->

@@ -1,0 +1,52 @@
+<mat-toolbar >
+  <button mat-icon-button  aria-label="Home" routerLink="/Home">
+   <mat-icon>home</mat-icon>
+ </button>
+ <h1>Task List</h1>
+ <mat-form-field appearance="standard" id="searchBar">
+  <input matInput placeholder="Task Name,Task Category,Task Priority" [(ngModel)]="searchText" >
+  <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
+
+<mat-chip-list style="margin-left:15%;">
+<mat-chip>
+  <img matChipAvatar src="https://www.colordic.org/image/ffecb3.png" alt="Photo of a Shiba Inu"/>
+ Low Priority
+</mat-chip>
+<mat-chip>
+  <img matChipAvatar src="https://th.bing.com/th/id/OIP.HrV6xKlaaCAgCrH05NyzEQHaDp?pid=ImgDet&rs=1" alt="Photo of a Shiba Inu"/>
+  High Priority
+</mat-chip>
+</mat-chip-list>
+
+</mat-toolbar>
+
+<div *ngFor="let x of taskList | filter: searchText |paginate: { itemsPerPage: tableSize,currentPage: p,totalItems: count}" id="chart">
+    <mat-card class="container" [ngClass]="{LOW: x.priority=='LOW',HIGH: x.priority=='HIGH'}">
+      <mat-card-title>{{x.taskHeading | uppercase}}</mat-card-title>
+      <mat-card-subtitle> <h2>{{x.taskCategory |uppercase}}</h2> </mat-card-subtitle>
+      <mat-card-content style="display:inline-block;">
+        <!-- <p>Task Description : {{x.taskDescription}}</p> -->
+        <p> Task Start Date : {{x.taskStartDate | date}}</p>
+        
+        <p> Task End Date : {{x.taskEndDate | date }}</p>
+      </mat-card-content>
+      <mat-card-actions style="clear:left;">
+        <button mat-icon-button (click)="openDilog(x)" id="add" >
+          <mat-icon matTooltip="Details">
+            info
+            </mat-icon>
+        </button>
+          <button  mat-icon-button (click)=" f2(x.taskId,x.taskHeading,x.taskCategory,
+          x.taskDescription,x.taskEndDate,x.taskStartDate,x.status,x.priority)">
+          <mat-icon matTooltip="Edit Task">edit</mat-icon>
+        </button>
+        <button  mat-icon-button (click)="shiftTask(x.taskId)">
+          <mat-icon matTooltip="Save to archieve">send_and_archive</mat-icon>
+        </button>
+        <button  mat-icon-button (click)="remove(x.taskId)">
+          <mat-icon matTooltip="Remove Task">delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

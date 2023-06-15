@@ -1,0 +1,102 @@
+h1,h2,h3,h4{
+    font-family: 'Fuzzy Bubbles', cursive;
+  }
+  
+  body{
+    background-image: url(..//assets/b3.jpg);
+    background-size: auto;  
+  }
+  
+  main{
+    width: 100%;
+  }
+  
+  #h1{
+      color: black ;
+      font-size: xx-large;
+      font-family: 'Fuzzy Bubbles', cursive;
+      font-weight:bolder;
+      margin-left:0.5%;
+  
+  }
+  
+  mat-toolbar {
+  background-color: transparent;
+  } 
+
+  #loginbtn{
+  margin-left: 72.5%;
+  font-family: 'Fuzzy Bubbles', cursive;
+        font-size: x-large;
+        width: fit-content; 
+        border-radius: 10px;
+  }
+  
+  #SignUpBtn
+  {
+    width:15%;
+    margin-left: 1%;
+    font-family: 'Fuzzy Bubbles', cursive;
+        font-size: x-large;
+        font-weight: bold;
+        background-color: rgb(245, 199, 101);
+        border-radius: 10px;      
+  }
+    
+    mat-icon{
+     font-size: x-large;
+    }
+    
+    button{
+      height: 45px;
+      width: 45px;
+      }
+      label{
+        font-family: 'Fuzzy Bubbles', cursive;
+        font-size: large;
+      }
+      
+      #icon
+      {
+          height: 100%;
+          width: 60px;
+          
+      }
+        
+        mat-sidenav {
+          width: 15%;
+         margin:0.5%;
+          background-color:rgb(202, 204, 206);
+          box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+          border-radius: 5px;
+          z-index: 10;
+          background: transparent;
+        }
+        mat-sidenav-container {
+          height: 93%;
+          background-size: cover; 
+          background: transparent;
+           }
+       
+        mat-nav-list{
+          display:grid;
+        }
+        
+        .sidenav-icon {
+          margin: 10px;
+        }
+      
+        .closeBtn{
+          float: left;
+          padding: 0px;
+        }
+        mat-icon:hover
+        {
+          color: rgba(43, 119, 143, 0.829);
+          }
+           
+          .profilePop{
+            height: 400px;
+            width:400px;
+            border: black 1px solid;
+        }

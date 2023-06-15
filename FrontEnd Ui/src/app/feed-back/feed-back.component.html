@@ -1,0 +1,35 @@
+<div id="feedBackForm">
+    <Label><h1> Your FeedBack is Valuable For Us <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> </h1></Label>
+    <br>
+    <form class="form" [formGroup]="feedBackForm" >
+        <mat-form-field style="width:450px !important" appearance="outline">
+      <mat-label>User EmailId </mat-label>
+      <input matInput type="email" id="email"  placeholder="Enter Email" formControlName="userEmailId" >
+      <div class="form-text text-danger" *ngIf="userEmailId.errors?.['required'] && (userEmailId.touched || userEmailId.dirty)">
+                        User Email Is Required
+                </div>
+                <div class="form-text text-danger" *ngIf="userEmailId.errors?.['minlength'] && (userEmailId.touched || userEmailId.dirty)">
+                        User Email is too Short
+                </div>
+                <div class="form-text text-danger" *ngIf="userEmailId.errors?.['maxlength'] && (userEmailId.touched || userEmailId.dirty)">
+                        User Email is too Long
+                </div>
+                <div class="form-text text-danger" *ngIf="userEmailId.errors?.['pattern'] && (userEmailId.touched || userEmailId.dirty)">
+                    Follow the Pattern
+            </div>
+    </mat-form-field>
+    <br>
+    <mat-form-field style="width:450px !important" appearance="outline">
+      <mat-label >Feed-Back Comment</mat-label>
+      <input matInput  id="inputWidth" formControlName="message" matInput type="text" placeholder="Enter Comment Here">
+       <div class="form-text text-danger" *ngIf="message.errors?.['required'] && (message.touched || message.dirty)">
+                        Pls Fill the Comment Box
+                </div>
+                <div class="form-text text-danger" *ngIf="message.errors?.['maxlength'] && (message.touched ||message.dirty)">
+                        Comment is  too Long
+                </div>               
+    </mat-form-field>
+    </form>
+
+    <button type="submit" mat-flat-button (click)="submitForm(feedBackForm.value)" >Submit</button>
+</div>

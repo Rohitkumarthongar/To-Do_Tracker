@@ -1,0 +1,21 @@
+
+<div id="details" >
+    <button mat-icon-button routerLink="/Home" style="float: right;"><mat-icon>close</mat-icon></button>
+    <h1 style="font-size: 50px;">Profile</h1>
+  
+    <p>User Name : {{data.userName |uppercase}} </p>
+
+    <p class="card-text col-6"> <mat-label>Email Id : <span>{{data.userEmailId | lowercase}}    </span> </mat-label></p>
+
+    <p class="card-text col-6"><mat-label>Password : {{data.userPassword }}</mat-label></p>
+
+    <p class="card-text col-6"><mat-label>Gender : {{data.userGender }}</mat-label></p>
+
+
+    <p class="card-text col-6"><mat-label>Date Of Birth : {{data.dateOfBirth |date}}</mat-label></p>
+
+    <br>
+    <button mat-flat-button routerLink="/updateUser" style="margin-right:5px;">Edit User </button>
+    <button mat-flat-button (click)="logOut()"> Log Out</button>
+  
+</div>

@@ -1,0 +1,18 @@
+h1,h2,h3,h4,p,label,span,div{
+    font-family: 'Fuzzy Bubbles', cursive;
+    display: flexbox;
+    padding: 5px;
+  }
+
+  .DetailCard{
+    z-index: 10;
+    background-color: rgba(231, 243, 245, 0.85);
+    padding: 40px;
+    /* height: 300px; */
+    width: 450px;
+    border-radius: 15px;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+
+  }
+
+
